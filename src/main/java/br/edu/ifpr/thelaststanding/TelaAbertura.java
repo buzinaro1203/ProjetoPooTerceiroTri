@@ -27,7 +27,7 @@ public class TelaAbertura extends javax.swing.JFrame {
     private void initComponents() {
 
         playButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 960));
@@ -42,13 +42,12 @@ public class TelaAbertura extends javax.swing.JFrame {
         getContentPane().add(playButton);
         playButton.setBounds(590, 660, 100, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Tela de Fundo 2.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.setAlignmentY(0.0F);
-        jLabel1.setMaximumSize(new java.awt.Dimension(1321, 960));
-        jLabel1.setMinimumSize(new java.awt.Dimension(1321, 960));
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1321, 960);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaAberturaFINAL.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jLabel2.setMaximumSize(new java.awt.Dimension(1280, 960));
+        jLabel2.setMinimumSize(new java.awt.Dimension(1280, 960));
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 1420, 960);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -96,7 +95,7 @@ public class TelaAbertura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton playButton;
     // End of variables declaration//GEN-END:variables
 }
