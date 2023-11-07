@@ -33,14 +33,14 @@ public class TelaAbertura extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1280, 960));
         getContentPane().setLayout(null);
 
-        playButton.setText("PLAY");
+        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/playButton.png"))); // NOI18N
         playButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playButtonActionPerformed(evt);
             }
         });
         getContentPane().add(playButton);
-        playButton.setBounds(560, 600, 160, 70);
+        playButton.setBounds(590, 660, 100, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Tela de Fundo 2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
