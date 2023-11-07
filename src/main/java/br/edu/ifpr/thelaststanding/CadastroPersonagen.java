@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author Aluno
  */
-public class CadastroGuerreiro extends javax.swing.JFrame {
+public class CadastroPersonagen extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroGuerreiro
      */
-    public CadastroGuerreiro() {
+    public CadastroPersonagen() {
         initComponents();
         // Gerar um inteiro entre min e max
         int ataque = (int) (Math.random() * (20 - 15 + 1) + 15);
@@ -371,20 +371,20 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroPersonagen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroPersonagen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroPersonagen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroPersonagen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroGuerreiro().setVisible(true);
+                new CadastroPersonagen().setVisible(true);
             }
         });
     }

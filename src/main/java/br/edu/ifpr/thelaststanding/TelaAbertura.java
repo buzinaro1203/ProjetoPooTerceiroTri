@@ -53,8 +53,8 @@ public class TelaAbertura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
-        CadastroGuerreiro cadastroGuerreiro = new CadastroGuerreiro();
-        cadastroGuerreiro.setVisible(true);
+        CadastroPersonagen cadastroPersonagen = new CadastroPersonagen();
+        cadastroPersonagen.setVisible(true);
         this.setVisible(false);
         //this.dispose(); libera a memória
     }//GEN-LAST:event_playButtonActionPerformed
