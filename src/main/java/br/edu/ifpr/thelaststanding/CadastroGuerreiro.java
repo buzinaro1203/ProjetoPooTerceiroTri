@@ -284,7 +284,7 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Menu Fundo.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 1321, 960);
+        jLabel7.setBounds(0, 0, 37, 16);
 
         pack();
         setLocationRelativeTo(null);
