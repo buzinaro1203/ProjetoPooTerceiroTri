@@ -271,14 +271,15 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
         getContentPane().add(jComboBox2);
         jComboBox2.setBounds(160, 510, 210, 22);
 
-        jButton3.setText("Confirmar");
+        jButton3.setBackground(new java.awt.Color(255, 255, 204));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/confirmarButton.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(600, 720, 130, 23);
+        jButton3.setBounds(590, 700, 110, 50);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Menu Fundo.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
