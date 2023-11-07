@@ -33,7 +33,7 @@ public class TelaAbertura extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1280, 960));
         getContentPane().setLayout(null);
 
-        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/playButton.png"))); // NOI18N
+        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/playbuttonfinal (1).png"))); // NOI18N
         playButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playButtonActionPerformed(evt);
