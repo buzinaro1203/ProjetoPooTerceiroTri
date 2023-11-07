@@ -69,6 +69,7 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton3 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 960));
@@ -159,7 +160,6 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
         jButton1.setBounds(310, 600, 130, 23);
 
         jButton2.setText("Salvar Mistico");
-        jButton2.setActionCommand("Salvar Mistico");
         jButton2.setAlignmentY(0.0F);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,6 +279,11 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3);
         jButton3.setBounds(600, 720, 130, 23);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Menu Fundo.jpg"))); // NOI18N
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(0, 0, 1321, 960);
 
         pack();
         setLocationRelativeTo(null);
@@ -400,6 +405,7 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNome1;
