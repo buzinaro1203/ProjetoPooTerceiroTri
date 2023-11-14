@@ -320,7 +320,7 @@ public class VerGuerreiro extends javax.swing.JFrame {
     private Guerreiro buscarGuerreiro() {
         Guerreiro guerreiro = new Guerreiro();
 
-        String sql = "SELECT * FROM 'tb_guerreiro';";
+        String sql = "SELECT * FROM `tb_guerreiro`;";
 
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
@@ -343,7 +343,7 @@ public class VerGuerreiro extends javax.swing.JFrame {
 
         Guerreiro guerreiro = new Guerreiro();
 
-        String sql = "SELECT * FROM `tb_guerreiro`;";
+        String sql = "SELECT * FROM `tb_guerreiro` ORDER BY id_guerreiro DESC LIMIT 1;";
 
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
