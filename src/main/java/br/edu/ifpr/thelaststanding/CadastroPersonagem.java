@@ -75,6 +75,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImages(null);
         setMaximumSize(new java.awt.Dimension(1280, 960));
         setMinimumSize(new java.awt.Dimension(1280, 960));
         setPreferredSize(new java.awt.Dimension(1280, 960));
@@ -101,7 +102,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNome);
-        txtNome.setBounds(160, 310, 211, 22);
+        txtNome.setBounds(160, 310, 211, 30);
 
         jLabel3.setText("Pontos de Vida");
         jLabel3.setAlignmentY(0.0F);
@@ -235,14 +236,14 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNome1);
-        txtNome1.setBounds(890, 320, 211, 22);
+        txtNome1.setBounds(890, 320, 211, 30);
 
         jLabel14.setText("Nome");
         jLabel14.setAlignmentY(0.0F);
         getContentPane().add(jLabel14);
         jLabel14.setBounds(890, 290, 60, 16);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Cajado De Gelo", "Grimorio das Sombras"}));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cajado De Gelo", "Grimorio das Sombras" }));
         jComboBox1.setAlignmentX(0.0F);
         jComboBox1.setAlignmentY(0.0F);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +264,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(880, 500, 40, 16);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Espada Flamejante", "Crucifixo"}));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Espada Flamejante", "Crucifixo" }));
         jComboBox2.setAlignmentX(0.0F);
         jComboBox2.setAlignmentY(0.0F);
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -275,19 +276,23 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         jComboBox2.setBounds(160, 510, 210, 22);
 
         jButton3.setBackground(new java.awt.Color(255, 255, 204));
-
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirm-button.png"))); // NOI18N
+        jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(590, 700, 110, 50);
+        jButton3.setBounds(590, 720, 170, 50);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("../resources/imagens/fundo-menu.jpeg")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/fundo-menu.jpeg"))); // NOI18N
         jLabel7.setText("jLabel7");
+        jLabel7.setMaximumSize(new java.awt.Dimension(1280, 960));
+        jLabel7.setMinimumSize(new java.awt.Dimension(1280, 960));
+        jLabel7.setPreferredSize(new java.awt.Dimension(1280, 960));
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 37, 16);
+        jLabel7.setBounds(0, 0, 1280, 960);
 
         pack();
         setLocationRelativeTo(null);

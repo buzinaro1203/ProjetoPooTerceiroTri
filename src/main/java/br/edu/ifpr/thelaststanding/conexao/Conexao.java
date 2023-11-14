@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class Conexao {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/the_last_standing";
+    private static final String URL = "jdbc:mysql://localhost:3304/the_last_standing";
     private static final String usuario = "root";
     private static final String senha = "";
     private static Connection conexao = null;

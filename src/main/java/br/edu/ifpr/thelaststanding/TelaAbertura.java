@@ -27,13 +27,12 @@ public class TelaAbertura extends javax.swing.JFrame {
     private void initComponents() {
 
         playButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/playbuttonfinal (1).png"))); // NOI18N
-
+        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/PlayButton.png"))); // NOI18N
         playButton.setMaximumSize(new java.awt.Dimension(150, 70));
         playButton.setMinimumSize(new java.awt.Dimension(150, 70));
         playButton.addActionListener(new java.awt.event.ActionListener() {
@@ -41,13 +40,11 @@ public class TelaAbertura extends javax.swing.JFrame {
                 playButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(playButton);
-        playButton.setBounds(580, 660, 130, 40);
+        getContentPane().add(playButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 660, 130, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaAberturaFINAL.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1321, 960);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/TelaAbertura.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -95,7 +92,7 @@ public class TelaAbertura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton playButton;
     // End of variables declaration//GEN-END:variables
 }
