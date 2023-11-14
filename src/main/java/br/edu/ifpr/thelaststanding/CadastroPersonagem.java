@@ -82,16 +82,16 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Guerreiro1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Guerreiro.png"))); // NOI18N
         jLabel1.setText("Foto do Gueirreiro");
         jLabel1.setAlignmentY(0.0F);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(350, 290, 249, 300);
+        jLabel1.setBounds(350, 310, 310, 300);
 
         jLabel2.setText("Nome");
         jLabel2.setAlignmentY(0.0F);
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(120, 280, 50, 16);
+        jLabel2.setBounds(150, 300, 50, 16);
 
         txtNome.setAlignmentX(0.0F);
         txtNome.setAlignmentY(0.0F);
@@ -101,12 +101,12 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNome);
-        txtNome.setBounds(120, 310, 211, 30);
+        txtNome.setBounds(150, 330, 211, 30);
 
         jLabel3.setText("Pontos de Vida");
         jLabel3.setAlignmentY(0.0F);
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(120, 340, 100, 16);
+        jLabel3.setBounds(150, 360, 100, 16);
 
         txtPontosVida.setEditable(false);
         txtPontosVida.setText("100");
@@ -118,7 +118,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtPontosVida);
-        txtPontosVida.setBounds(120, 360, 211, 22);
+        txtPontosVida.setBounds(150, 380, 211, 22);
 
         txtPontosAtaque.setEditable(false);
         txtPontosAtaque.setAlignmentX(0.0F);
@@ -129,17 +129,17 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtPontosAtaque);
-        txtPontosAtaque.setBounds(120, 410, 211, 22);
+        txtPontosAtaque.setBounds(150, 430, 211, 22);
 
         jLabel4.setText("Pontos de Ataque");
         jLabel4.setAlignmentY(0.0F);
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(120, 390, 100, 16);
+        jLabel4.setBounds(150, 410, 100, 16);
 
         jLabel5.setText("Item");
         jLabel5.setAlignmentY(0.0F);
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(120, 490, 70, 16);
+        jLabel5.setBounds(150, 510, 70, 16);
 
         txtPontosDefesa.setEditable(false);
         txtPontosDefesa.setAlignmentX(0.0F);
@@ -150,7 +150,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtPontosDefesa);
-        txtPontosDefesa.setBounds(120, 460, 211, 22);
+        txtPontosDefesa.setBounds(150, 480, 211, 22);
 
         jButton1.setText("Salvar Guerreiro");
         jButton1.setAlignmentY(0.0F);
@@ -160,7 +160,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(270, 600, 130, 23);
+        jButton1.setBounds(280, 620, 130, 23);
 
         jButton2.setText("Salvar Mistico");
         jButton2.setAlignmentY(0.0F);
@@ -170,14 +170,14 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(860, 610, 130, 23);
+        jButton2.setBounds(900, 620, 130, 23);
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Mago Normal.jpg"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoNormal.png"))); // NOI18N
         jLabel8.setText("Foto do Mistico");
         jLabel8.setAlignmentY(0.0F);
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(630, 290, 249, 300);
+        jLabel8.setBounds(670, 300, 249, 300);
 
         txtPontosDefesa1.setEditable(false);
         txtPontosDefesa1.setAlignmentX(0.0F);
@@ -188,12 +188,12 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtPontosDefesa1);
-        txtPontosDefesa1.setBounds(890, 470, 211, 22);
+        txtPontosDefesa1.setBounds(930, 480, 211, 22);
 
         jLabel11.setText("Pontos de Defesa");
         jLabel11.setAlignmentY(0.0F);
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(890, 450, 100, 16);
+        jLabel11.setBounds(930, 460, 100, 16);
 
         txtPontosAtaque1.setEditable(false);
         txtPontosAtaque1.setAlignmentX(0.0F);
@@ -204,12 +204,12 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtPontosAtaque1);
-        txtPontosAtaque1.setBounds(890, 420, 211, 22);
+        txtPontosAtaque1.setBounds(930, 430, 211, 22);
 
         jLabel12.setText("Pontos de Ataque");
         jLabel12.setAlignmentY(0.0F);
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(890, 400, 110, 16);
+        jLabel12.setBounds(930, 410, 110, 16);
 
         txtPontosVida1.setEditable(false);
         txtPontosVida1.setText("100");
@@ -221,12 +221,12 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtPontosVida1);
-        txtPontosVida1.setBounds(890, 370, 211, 22);
+        txtPontosVida1.setBounds(930, 380, 211, 22);
 
         jLabel13.setText("Pontos de Vida");
         jLabel13.setAlignmentY(0.0F);
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(890, 350, 100, 16);
+        jLabel13.setBounds(930, 360, 100, 16);
 
         txtNome1.setAlignmentX(0.0F);
         txtNome1.setAlignmentY(0.0F);
@@ -236,14 +236,14 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNome1);
-        txtNome1.setBounds(890, 320, 211, 30);
+        txtNome1.setBounds(930, 330, 211, 30);
 
         jLabel14.setText("Nome");
         jLabel14.setAlignmentY(0.0F);
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(890, 290, 60, 16);
+        jLabel14.setBounds(930, 300, 60, 16);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cajado De Gelo", "Grimorio das Sombras" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Vazio>", "Cajado De Gelo", "Grimorio das Sombras" }));
         jComboBox1.setAlignmentX(0.0F);
         jComboBox1.setAlignmentY(0.0F);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -252,19 +252,19 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(890, 520, 220, 22);
+        jComboBox1.setBounds(930, 530, 220, 22);
 
         jLabel15.setText("Pontos de Defesa");
         jLabel15.setAlignmentY(0.0F);
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(120, 440, 110, 16);
+        jLabel15.setBounds(150, 460, 110, 16);
 
         jLabel6.setText("Item");
         jLabel6.setAlignmentY(0.0F);
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(890, 500, 40, 16);
+        jLabel6.setBounds(930, 510, 40, 16);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Espada Flamejante", "Crucifixo" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Vazio>", "Espada Flamejante", "Crucifixo" }));
         jComboBox2.setAlignmentX(0.0F);
         jComboBox2.setAlignmentY(0.0F);
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -273,11 +273,12 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(120, 510, 210, 22);
+        jComboBox2.setBounds(150, 530, 210, 22);
 
         jButton3.setBackground(new java.awt.Color(255, 255, 204));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/confirm-button.png"))); // NOI18N
         jButton3.setBorder(null);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -292,7 +293,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         jLabel7.setMinimumSize(new java.awt.Dimension(1280, 960));
         jLabel7.setPreferredSize(new java.awt.Dimension(1280, 960));
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 1280, 960);
+        jLabel7.setBounds(10, 0, 1280, 960);
 
         pack();
         setLocationRelativeTo(null);
