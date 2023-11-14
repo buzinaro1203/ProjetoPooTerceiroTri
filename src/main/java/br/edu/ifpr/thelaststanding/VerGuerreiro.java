@@ -5,6 +5,8 @@
 package br.edu.ifpr.thelaststanding;
 
 import br.edu.ifpr.thelaststanding.conexao.Conexao;
+import br.edu.ifpr.thelaststanding.personagens.Guerreiro;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

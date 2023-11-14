@@ -5,19 +5,22 @@
 package br.edu.ifpr.thelaststanding;
 
 import br.edu.ifpr.thelaststanding.conexao.Conexao;
+import br.edu.ifpr.thelaststanding.personagens.Guerreiro;
+import br.edu.ifpr.thelaststanding.personagens.Mago;
+
 import java.sql.PreparedStatement;
+import java.util.Objects;
 import javax.swing.JOptionPane;
 
 /**
- *
  * @author Aluno
  */
-public class CadastroPersonagen extends javax.swing.JFrame {
+public class CadastroPersonagem extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroGuerreiro
      */
-    public CadastroPersonagen() {
+    public CadastroPersonagem() {
         initComponents();
         // Gerar um inteiro entre min e max
         int ataque = (int) (Math.random() * (20 - 15 + 1) + 15);
@@ -25,7 +28,7 @@ public class CadastroPersonagen extends javax.swing.JFrame {
 
         int defesa = (int) (Math.random() * (15 - 10 + 1) + 10);
         txtPontosDefesa.setText("" + defesa);
-        
+
         int ataque1 = (int) (Math.random() * (25 - 20 + 1) + 15);
         txtPontosAtaque1.setText("" + ataque1);
 
@@ -239,7 +242,7 @@ public class CadastroPersonagen extends javax.swing.JFrame {
         getContentPane().add(jLabel14);
         jLabel14.setBounds(890, 290, 60, 16);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cajado De Gelo", "Grimorio das Sombras" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Cajado De Gelo", "Grimorio das Sombras"}));
         jComboBox1.setAlignmentX(0.0F);
         jComboBox1.setAlignmentY(0.0F);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -260,7 +263,7 @@ public class CadastroPersonagen extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(880, 500, 40, 16);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Espada Flamejante", "Crucifixo" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Espada Flamejante", "Crucifixo"}));
         jComboBox2.setAlignmentX(0.0F);
         jComboBox2.setAlignmentY(0.0F);
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -272,7 +275,7 @@ public class CadastroPersonagen extends javax.swing.JFrame {
         jComboBox2.setBounds(160, 510, 210, 22);
 
         jButton3.setBackground(new java.awt.Color(255, 255, 204));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/confirmarButton.png"))); // NOI18N
+
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -281,7 +284,7 @@ public class CadastroPersonagen extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(590, 700, 110, 50);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Menu Fundo.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("../resources/imagens/fundo-menu.jpeg")); // NOI18N
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(0, 0, 37, 16);
@@ -321,7 +324,15 @@ public class CadastroPersonagen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        Mago mago = new Mago();
+
+        mago.setNome(txtNome1.getText());
+        mago.setPontosVida(Integer.parseInt(txtPontosVida1.getText()));
+        mago.setPontosAtaque(Integer.parseInt(txtPontosAtaque1.getText()));
+        mago.setPontosDefesa(Integer.parseInt(txtPontosDefesa1.getText()));
+
+
+        salvar(mago);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtPontosDefesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPontosDefesa1ActionPerformed
@@ -350,7 +361,7 @@ public class CadastroPersonagen extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-                        this.dispose();
+        this.dispose();
         new TelaAbertura().setVisible(true); // exibe a tela inicial
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -361,7 +372,7 @@ public class CadastroPersonagen extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -371,20 +382,20 @@ public class CadastroPersonagen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroPersonagen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroPersonagem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroPersonagen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroPersonagem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroPersonagen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroPersonagem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroPersonagen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroPersonagem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroPersonagen().setVisible(true);
+                new CadastroPersonagem().setVisible(true);
             }
         });
     }
@@ -425,20 +436,45 @@ public class CadastroPersonagen extends javax.swing.JFrame {
                 + "VALUES "
                 + "(?, ?, ?, ?, ?, ?);";
         try {
-                PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
-                preparacaoDaInstrucao.setString(1, guerreiro.getNome());
-                preparacaoDaInstrucao.setInt(2, guerreiro.getPontosVida());
-                preparacaoDaInstrucao.setInt(3, guerreiro.getPontosAtaque());
-                preparacaoDaInstrucao.setInt(4, guerreiro.getPontosDefesa());
-                preparacaoDaInstrucao.setInt(5, guerreiro.getForca());
-                preparacaoDaInstrucao.setInt(6, guerreiro.getVelocidade());
-                preparacaoDaInstrucao.executeUpdate();
-                JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
- // libera a memória da janela
-                
+            PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
+            preparacaoDaInstrucao.setString(1, guerreiro.getNome());
+            preparacaoDaInstrucao.setInt(2, guerreiro.getPontosVida());
+            preparacaoDaInstrucao.setInt(3, guerreiro.getPontosAtaque());
+            preparacaoDaInstrucao.setInt(4, guerreiro.getPontosDefesa());
+            preparacaoDaInstrucao.setInt(5, guerreiro.getForca());
+            preparacaoDaInstrucao.setInt(6, guerreiro.getVelocidade());
+            preparacaoDaInstrucao.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
+            // libera a memória da janela
+
         } catch (Exception e) {
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Erro ao salvar!");
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao salvar!");
+        }
+
+    }
+
+    private void salvar(Mago mago) {
+        String sql = "INSERT "
+                + "INTO `tb_mago` "
+                + "(`nome`, `ponto_vida`, `ponto_ataque`, `ponto_defesa`, `magia`, `poder_sombrio`) "
+                + "VALUES "
+                + "(?, ?, ?, ?, ?, ?);";
+        try {
+            PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
+            preparacaoDaInstrucao.setString(1, mago.getNome());
+            preparacaoDaInstrucao.setInt(2, mago.getPontosVida());
+            preparacaoDaInstrucao.setInt(3, mago.getPontosAtaque());
+            preparacaoDaInstrucao.setInt(4, mago.getPontosDefesa());
+            preparacaoDaInstrucao.setInt(5, mago.getMagia());
+            preparacaoDaInstrucao.setInt(6, mago.getPoderSombrio());
+            preparacaoDaInstrucao.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
+            // libera a memória da janela
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao salvar!");
         }
     }
 //    private void salvar1(Mistico mistico) {
@@ -464,4 +500,5 @@ public class CadastroPersonagen extends javax.swing.JFrame {
 //                JOptionPane.showMessageDialog(this, "Erro ao salvar!");
 //        }
 //    }
+
 }

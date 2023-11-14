@@ -27,34 +27,34 @@ public class TelaAbertura extends javax.swing.JFrame {
     private void initComponents() {
 
         playButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 960));
         getContentPane().setLayout(null);
 
         playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/playbuttonfinal (1).png"))); // NOI18N
+
+        playButton.setMaximumSize(new java.awt.Dimension(150, 70));
+        playButton.setMinimumSize(new java.awt.Dimension(150, 70));
         playButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playButtonActionPerformed(evt);
             }
         });
         getContentPane().add(playButton);
-        playButton.setBounds(590, 660, 100, 40);
+        playButton.setBounds(580, 660, 130, 40);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaAberturaFINAL.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jLabel2.setMaximumSize(new java.awt.Dimension(1280, 960));
-        jLabel2.setMinimumSize(new java.awt.Dimension(1280, 960));
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 1420, 960);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaAberturaFINAL.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1321, 960);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
-        CadastroPersonagen cadastroPersonagen = new CadastroPersonagen();
-        cadastroPersonagen.setVisible(true);
+        CadastroPersonagem cadastroPersonagem = new CadastroPersonagem();
+        cadastroPersonagem.setVisible(true);
         this.setVisible(false);
         //this.dispose(); libera a memória
     }//GEN-LAST:event_playButtonActionPerformed
@@ -66,7 +66,7 @@ public class TelaAbertura extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -95,7 +95,7 @@ public class TelaAbertura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton playButton;
     // End of variables declaration//GEN-END:variables
 }
