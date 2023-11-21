@@ -34,6 +34,8 @@ public class CadastroPersonagem extends javax.swing.JFrame {
 
         int defesa1 = (int) (Math.random() * (10 - 5 + 1) + 10);
         txtPontosDefesa1.setText("" + defesa1);
+        
+        jButton3.setVisible(false);
 
 
     }
@@ -325,8 +327,11 @@ public class CadastroPersonagem extends javax.swing.JFrame {
 
 
         salvar(guerreiro);
-
-
+        
+        
+        if(jbutton1value == 1 && jbutton2value == 1){
+            jButton3.setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -339,6 +344,10 @@ public class CadastroPersonagem extends javax.swing.JFrame {
 
 
         salvar(mago);
+        
+        if(jbutton1value == 1 && jbutton2value == 1){
+            jButton3.setVisible(true);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtPontosDefesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPontosDefesa1ActionPerformed
@@ -367,8 +376,11 @@ public class CadastroPersonagem extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        TelaBatalha tela = new TelaBatalha();
         this.dispose();
-        new TelaAbertura().setVisible(true); // exibe a tela inicial
+        tela.setVisible(true);
+
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -434,7 +446,9 @@ public class CadastroPersonagem extends javax.swing.JFrame {
     private javax.swing.JTextField txtPontosVida;
     private javax.swing.JTextField txtPontosVida1;
     // End of variables declaration//GEN-END:variables
-
+    private int jbutton1value = 0;
+    private int jbutton2value = 0;
+    
     private void salvar(Guerreiro guerreiro) {
         String sql = "INSERT "
                 + "INTO `tb_guerreiro` "
@@ -452,10 +466,14 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             preparacaoDaInstrucao.executeUpdate();
             JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
             // libera a memória da janela
+            jButton1.setVisible(false);
+            jbutton1value = 1;
 
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Erro ao salvar!");
+            jButton1.setVisible(true);
+            jbutton1value = 0;
         }
 
     }
@@ -477,10 +495,14 @@ public class CadastroPersonagem extends javax.swing.JFrame {
             preparacaoDaInstrucao.executeUpdate();
             JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
             // libera a memória da janela
+            jButton2.setVisible(false);
+            jbutton2value = 1;
 
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Erro ao salvar!");
+            jButton2.setVisible(true);
+            jbutton2value = 0;
         }
     }
 //    private void salvar1(Mistico mistico) {

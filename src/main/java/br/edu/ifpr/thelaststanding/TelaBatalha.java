@@ -24,6 +24,9 @@ public class TelaBatalha extends javax.swing.JFrame {
      */
     public TelaBatalha() {
         initComponents();
+        imprimeGuerreiros();
+        imprimeMago();
+        
     }
 
     /**
@@ -212,8 +215,6 @@ public class TelaBatalha extends javax.swing.JFrame {
     public static void main(String args[]) {
         TelaBatalha tela = new TelaBatalha();
         tela.setVisible(true);
-        tela.imprimeGuerreiros();
-        tela.imprimeMago();
         
     }
     
