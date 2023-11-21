@@ -6,6 +6,7 @@ package br.edu.ifpr.thelaststanding;
 
 import br.edu.ifpr.thelaststanding.conexao.Conexao;
 import br.edu.ifpr.thelaststanding.personagens.Guerreiro;
+import br.edu.ifpr.thelaststanding.personagens.Mago;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,9 +35,21 @@ public class TelaBatalha extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel11 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -45,7 +58,59 @@ public class TelaBatalha extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1280, 960));
         setResizable(false);
         getContentPane().setLayout(null);
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(870, 330, 130, 30);
 
+        jTextField3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextField3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextField3.setEnabled(false);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(840, 720, 140, 30);
+
+        jTextField5.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextField5.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextField5.setEnabled(false);
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField5);
+        jTextField5.setBounds(840, 760, 140, 30);
+
+        jTextField6.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextField6.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextField6.setEnabled(false);
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField6);
+        jTextField6.setBounds(840, 800, 140, 30);
+
+        jLabel9.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel9.setText("Defesa");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(1000, 810, 50, 16);
+
+        jLabel7.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel7.setText("Ataque");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(1000, 770, 50, 16);
+
+        jLabel10.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel10.setText("Vida");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(1000, 730, 50, 16);
+
+        jTextField1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextField1.setEnabled(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +119,8 @@ public class TelaBatalha extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1);
         jTextField1.setBounds(360, 720, 140, 30);
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(360, 330, 140, 30);
 
         jLabel4.setForeground(new java.awt.Color(250, 250, 250));
         jLabel4.setText("Vida");
@@ -65,12 +132,45 @@ public class TelaBatalha extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(770, 300, 290, 420);
 
+        jLabel6.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel6.setText("Ataque");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(290, 770, 50, 16);
+
+        jTextField2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextField2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextField2.setEnabled(false);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(360, 760, 140, 30);
+
+        jLabel8.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel8.setText("Defesa");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(290, 810, 50, 16);
+
+        jTextField4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextField4.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextField4.setEnabled(false);
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(360, 800, 140, 30);
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Guerreiro.png"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(270, 240, 300, 540);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/batalha-fundo.jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
+        jLabel1.setToolTipText("");
         jLabel1.setMaximumSize(new java.awt.Dimension(1280, 960));
         jLabel1.setMinimumSize(new java.awt.Dimension(1280, 960));
         jLabel1.setPreferredSize(new java.awt.Dimension(1280, 960));
@@ -81,45 +181,43 @@ public class TelaBatalha extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-        //GEN-FIRST:event_jTextField1ActionPerformed
+//GEN-FIRST:event_jTextField1ActionPerformed
         //TODO add your handling code here:
 
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaBatalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaBatalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaBatalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaBatalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaBatalha().setVisible(true);
-            }
-        });
+        TelaBatalha tela = new TelaBatalha();
+        tela.setVisible(true);
+        tela.imprimeGuerreiros();
+        tela.imprimeMago();
+        
     }
-    private Guerreiro getGuerreiro(){
+    
+    private Guerreiro getGuerreiroBD(){
         Guerreiro guerreiro = new Guerreiro();
 
         String sql = "SELECT * FROM `tb_guerreiro` ORDER BY id_guerreiro DESC LIMIT 1;";
@@ -145,6 +243,9 @@ public class TelaBatalha extends javax.swing.JFrame {
         Guerreiro guerreiro = new Guerreiro();
 
         String sql = "SELECT * FROM `tb_guerreiro` ORDER BY id_guerreiro DESC LIMIT 1;";
+        String vida, nome, ataque, defesa;
+        
+        
 
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
@@ -155,21 +256,78 @@ public class TelaBatalha extends javax.swing.JFrame {
                 guerreiro.setPontosVida(resultado.getInt("ponto_vida"));
                 guerreiro.setPontosAtaque(resultado.getInt("ponto_ataque"));
                 guerreiro.setPontosDefesa(resultado.getInt("ponto_defesa"));
-                guerreiro.setForca(resultado.getInt("forca"));
-                guerreiro.setVelocidade(resultado.getInt("velocidade"));
-                System.out.println(guerreiro.toString());
+//                guerreiro.setForca(resultado.getInt("forca"));
+//                guerreiro.setVelocidade(resultado.getInt("velocidade"));
+                  vida = "" + guerreiro.getPontosVida();
+                  nome = "" + guerreiro.getNome();
+                  ataque = "" + guerreiro.getPontosAtaque();
+                  defesa = "" + guerreiro.getPontosDefesa();
+                  
+                  
+                    jTextField2.setText(ataque);
+                    jTextField4.setText(defesa);
+                    jLabel5.setText(nome);
+                    jTextField1.setText(vida);
             }
         } catch (SQLException ex) {
             Logger.getLogger(VerGuerreiro.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }
     }
+        private void imprimeMago() {
+
+        Mago mago = new Mago();
+
+        String sql = "SELECT * FROM `tb_mago` ORDER BY id_mago DESC LIMIT 1;";
+        String vida, nome, ataque, defesa;
+        
+        
+
+        try {
+            PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
+            ResultSet resultado = preparacaoDaInstrucao.executeQuery();
+
+            while (resultado.next()) {
+                mago.setNome(resultado.getString("nome"));
+                mago.setPontosVida(resultado.getInt("ponto_vida"));
+                mago.setPontosAtaque(resultado.getInt("ponto_ataque"));
+                mago.setPontosDefesa(resultado.getInt("ponto_defesa"));
+//                guerreiro.setForca(resultado.getInt("forca"));
+//                guerreiro.setVelocidade(resultado.getInt("velocidade"));
+                  vida = "" + mago.getPontosVida();
+                  nome = "" + mago.getNome();
+                  ataque = "" + mago.getPontosAtaque();
+                  defesa = "" + mago.getPontosDefesa();
+                  
+                  
+                    jTextField5.setText(ataque);
+                    jTextField6.setText(defesa);
+                    jLabel11.setText(nome);
+                    jTextField3.setText(vida);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(VerGuerreiro.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
