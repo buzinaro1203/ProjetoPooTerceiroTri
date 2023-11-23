@@ -10,6 +10,7 @@ import br.edu.ifpr.thelaststanding.personagens.Mago;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -321,33 +322,36 @@ public class TelaBatalha extends javax.swing.JFrame {
             return mago;
         }
 
-        private void batalha(Mago mago, Guerreiro guerreiro){
+    private void batalha(Mago mago, Guerreiro guerreiro) {
         int vidaMago = mago.getPontosVida();
         int ataqueMago = mago.getPontosAtaque();
         int defesaMago = mago.getPontosDefesa();
         int vidaGuerreiro = guerreiro.getPontosVida();
         int ataqueGuerreiro = guerreiro.getPontosAtaque();
         int defesaGuerreiro = guerreiro.getPontosDefesa();
-        int vezJogador = 1;
-        while (vidaMago > 0 && vidaGuerreiro > 0){
-            if (vezJogador == 1){
-                vidaMago = vidaMago - (ataqueGuerreiro - defesaMago);
+        int vezJogador;
+
+        // Use a classe Random para decidir aleatoriamente quem ataca primeiro
+        Random random = new Random();
+        vezJogador = random.nextInt(2)+1;  // Gera 1 ou 2 aleatoriamente
+        System.out.println(vezJogador);
+        while (vidaMago > 0 && vidaGuerreiro > 0) {
+            if (vezJogador == 1) {
+                int dano = Math.max(ataqueGuerreiro - defesaMago, 0);
+                vidaMago = Math.max(vidaMago - dano, 0);
                 String stringVidaMago = "" + vidaMago;
                 jTextField3.setText(stringVidaMago);
-
-                vezJogador++;
+                vezJogador = 2;
 
             } else if (vezJogador == 2) {
-                vidaGuerreiro = vidaGuerreiro - (ataqueMago - defesaGuerreiro);
+                int dano = Math.max(ataqueMago - defesaGuerreiro, 0);
+                vidaGuerreiro = Math.max(vidaGuerreiro - dano, 0);
                 String stringVidaGuerreiro = "" + vidaGuerreiro;
                 jTextField1.setText(stringVidaGuerreiro);
-
-                vezJogador--;
+                vezJogador = 1;
             }
         }
-
-        }
-
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
