@@ -23,10 +23,15 @@ public class TelaBatalha extends javax.swing.JFrame {
      * Creates new form TelaBatalha
      */
     public TelaBatalha() {
+        Mago mago;
+        Guerreiro guerreiro;
+
         initComponents();
-        imprimeGuerreiros();
-        imprimeMago();
+        guerreiro = imprimeGuerreiros();
+        mago = imprimeMago();
         
+        batalha(mago,guerreiro);
+
     }
 
     /**
@@ -215,9 +220,9 @@ public class TelaBatalha extends javax.swing.JFrame {
     public static void main(String args[]) {
         TelaBatalha tela = new TelaBatalha();
         tela.setVisible(true);
-        
+
     }
-    
+
     private Guerreiro getGuerreiroBD(){
         Guerreiro guerreiro = new Guerreiro();
 
@@ -239,14 +244,14 @@ public class TelaBatalha extends javax.swing.JFrame {
 
         return guerreiro;
     }
-    private void imprimeGuerreiros() {
+    private Guerreiro imprimeGuerreiros() {
 
         Guerreiro guerreiro = new Guerreiro();
 
         String sql = "SELECT * FROM `tb_guerreiro` ORDER BY id_guerreiro DESC LIMIT 1;";
         String vida, nome, ataque, defesa;
-        
-        
+
+
 
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
@@ -263,8 +268,8 @@ public class TelaBatalha extends javax.swing.JFrame {
                   nome = "" + guerreiro.getNome();
                   ataque = "" + guerreiro.getPontosAtaque();
                   defesa = "" + guerreiro.getPontosDefesa();
-                  
-                  
+
+
                     jTextField2.setText(ataque);
                     jTextField4.setText(defesa);
                     jLabel5.setText(nome);
@@ -274,8 +279,9 @@ public class TelaBatalha extends javax.swing.JFrame {
             Logger.getLogger(VerGuerreiro.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }
+        return guerreiro;
     }
-        private void imprimeMago() {
+        private Mago imprimeMago() {
 
         Mago mago = new Mago();
 
@@ -299,17 +305,47 @@ public class TelaBatalha extends javax.swing.JFrame {
                   nome = "" + mago.getNome();
                   ataque = "" + mago.getPontosAtaque();
                   defesa = "" + mago.getPontosDefesa();
-                  
-                  
+
+
                     jTextField5.setText(ataque);
                     jTextField6.setText(defesa);
                     jLabel11.setText(nome);
                     jTextField3.setText(vida);
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(VerGuerreiro.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
+
         }
+            return mago;
+        }
+
+        private void batalha(Mago mago, Guerreiro guerreiro){
+        int vidaMago = mago.getPontosVida();
+        int ataqueMago = mago.getPontosAtaque();
+        int defesaMago = mago.getPontosDefesa();
+        int vidaGuerreiro = guerreiro.getPontosVida();
+        int ataqueGuerreiro = guerreiro.getPontosAtaque();
+        int defesaGuerreiro = guerreiro.getPontosDefesa();
+        int vezJogador = 1;
+        while (vidaMago > 0 && vidaGuerreiro > 0){
+            if (vezJogador == 1){
+                vidaMago = vidaMago - (ataqueGuerreiro - defesaMago);
+                String stringVidaMago = "" + vidaMago;
+                jTextField3.setText(stringVidaMago);
+
+                vezJogador++;
+
+            } else if (vezJogador == 2) {
+                vidaGuerreiro = vidaGuerreiro - (ataqueMago - defesaGuerreiro);
+                String stringVidaGuerreiro = "" + vidaGuerreiro;
+                jTextField1.setText(stringVidaGuerreiro);
+
+                vezJogador--;
+            }
+        }
+
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
