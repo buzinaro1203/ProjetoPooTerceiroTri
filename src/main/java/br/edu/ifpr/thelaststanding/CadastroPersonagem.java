@@ -458,7 +458,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
             preparacaoDaInstrucao.setString(1, guerreiro.getNome());
-            preparacaoDaInstrucao.setInt(2, guerreiro.getPontosVida());
+            preparacaoDaInstrucao.setDouble(2, guerreiro.getPontosVida());
             preparacaoDaInstrucao.setInt(3, guerreiro.getPontosAtaque());
             preparacaoDaInstrucao.setInt(4, guerreiro.getPontosDefesa());
             preparacaoDaInstrucao.setInt(5, guerreiro.getForca());
@@ -487,7 +487,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
             preparacaoDaInstrucao.setString(1, mago.getNome());
-            preparacaoDaInstrucao.setInt(2, mago.getPontosVida());
+            preparacaoDaInstrucao.setDouble(2, mago.getPontosVida());
             preparacaoDaInstrucao.setInt(3, mago.getPontosAtaque());
             preparacaoDaInstrucao.setInt(4, mago.getPontosDefesa());
             preparacaoDaInstrucao.setInt(5, mago.getMagia());

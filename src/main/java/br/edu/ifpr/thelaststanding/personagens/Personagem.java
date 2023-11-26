@@ -2,7 +2,7 @@ package br.edu.ifpr.thelaststanding.personagens;
 
 public class Personagem {
     private String nome;
-    private int pontosVida;
+    private double pontosVida;
     private int pontosAtaque;
     private int pontosDefesa;
 
@@ -14,11 +14,11 @@ public class Personagem {
         this.nome = nome;
     }
 
-    public int getPontosVida() {
+    public double getPontosVida() {
         return pontosVida;
     }
 
-    public void setPontosVida(int pontosVida) {
+    public void setPontosVida(double pontosVida) {
         this.pontosVida = pontosVida;
     }
 

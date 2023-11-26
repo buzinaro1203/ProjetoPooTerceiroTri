@@ -302,7 +302,7 @@ public class VerGuerreiro extends javax.swing.JFrame {
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
             preparacaoDaInstrucao.setString(1, guerreiro.getNome());
-            preparacaoDaInstrucao.setInt(2, guerreiro.getPontosVida());
+            preparacaoDaInstrucao.setDouble(2, guerreiro.getPontosVida());
             preparacaoDaInstrucao.setInt(3, guerreiro.getPontosAtaque());
             preparacaoDaInstrucao.setInt(4, guerreiro.getPontosDefesa());
             preparacaoDaInstrucao.setInt(5, guerreiro.getForca());

@@ -7,15 +7,16 @@ package br.edu.ifpr.thelaststanding;
 import br.edu.ifpr.thelaststanding.conexao.Conexao;
 import br.edu.ifpr.thelaststanding.personagens.Guerreiro;
 import br.edu.ifpr.thelaststanding.personagens.Mago;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author Aluno
  */
 public class TelaBatalha extends javax.swing.JFrame {
@@ -26,24 +27,40 @@ public class TelaBatalha extends javax.swing.JFrame {
     public TelaBatalha() {
         initComponents();
 
-        jLabel2.setVisible(false);
-        jLabel3.setVisible(false);
-        jLabel4.setVisible(false);
-        jLabel5.setVisible(false);
-        jLabel6.setVisible(false);
-        jLabel7.setVisible(false);
-        jLabel8.setVisible(false);
-        jLabel9.setVisible(false);
-        jLabel10.setVisible(false);
-        jLabel11.setVisible(false);
-        labelDanoGuerreiro.setVisible(false);
-        labelDanoMago.setVisible(false);
-        jTextField1.setVisible(false);
-        jTextField2.setVisible(false);
-        jTextField3.setVisible(false);
-        jTextField4.setVisible(false);
-        jTextField5.setVisible(false);
-        jTextField6.setVisible(false);
+        jLabel1.setVisible(true);
+        jLabel2.setVisible(true);
+        jLabel3.setVisible(true);
+        jLabel4.setVisible(true);
+        jLabel5.setVisible(true);
+        jLabel6.setVisible(true);
+        jLabel7.setVisible(true);
+        jLabel8.setVisible(true);
+        jLabel9.setVisible(true);
+        jLabel10.setVisible(true);
+        jLabel11.setVisible(true);
+        jTextField1.setVisible(true);
+        jTextField2.setVisible(true);
+        jTextField3.setVisible(true);
+        jTextField4.setVisible(true);
+        jTextField5.setVisible(true);
+        jTextField6.setVisible(true);
+        
+        Random random = new Random();
+        int vezJogador = random.nextInt(2) + 1;  // Gera 1 ou 2 aleatoriamente
+        
+        Mago mago = imprimeMago();
+        
+        Guerreiro guerreiro = imprimeGuerreiros();
+        
+            if(vezJogador == 1){
+                ataqueGuerreiro.setVisible(true);
+                ataqueMago.setVisible(false);
+            }else if(vezJogador == 2){
+                ataqueGuerreiro.setVisible(false);
+                ataqueMago.setVisible(true);
+            }
+        
+        
 
     }
 
@@ -60,8 +77,9 @@ public class TelaBatalha extends javax.swing.JFrame {
         labelDanoMago = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
+        ataqueGuerreiro = new javax.swing.JButton();
         labelDanoGuerreiro = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        ataqueMago = new javax.swing.JButton();
         jTextField6 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -113,20 +131,29 @@ public class TelaBatalha extends javax.swing.JFrame {
         getContentPane().add(jTextField5);
         jTextField5.setBounds(840, 760, 140, 30);
 
+        ataqueGuerreiro.setText("Ataque");
+        ataqueGuerreiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ataqueGuerreiroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ataqueGuerreiro);
+        ataqueGuerreiro.setBounds(390, 660, 70, 40);
+
         labelDanoGuerreiro.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         labelDanoGuerreiro.setForeground(new java.awt.Color(255, 0, 0));
         labelDanoGuerreiro.setText("asdasds");
         getContentPane().add(labelDanoGuerreiro);
         labelDanoGuerreiro.setBounds(460, 280, 90, 50);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ataqueMago.setText("Ataque");
+        ataqueMago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ataqueMagoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(620, 650, 100, 30);
+        getContentPane().add(ataqueMago);
+        ataqueMago.setBounds(880, 660, 70, 40);
 
         jTextField6.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jTextField6.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -220,7 +247,7 @@ public class TelaBatalha extends javax.swing.JFrame {
         jLabel1.setMinimumSize(new java.awt.Dimension(1280, 960));
         jLabel1.setPreferredSize(new java.awt.Dimension(1280, 960));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1280, 960);
+        jLabel1.setBounds(10, 0, 1270, 960);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -251,36 +278,36 @@ public class TelaBatalha extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        jLabel1.setVisible(true);
-        jLabel2.setVisible(true);
-        jLabel3.setVisible(true);
-        jLabel4.setVisible(true);
-        jLabel5.setVisible(true);
-        jLabel6.setVisible(true);
-        jLabel7.setVisible(true);
-        jLabel8.setVisible(true);
-        jLabel9.setVisible(true);
-        jLabel10.setVisible(true);
-        jLabel11.setVisible(true);
-        jTextField1.setVisible(true);
-        jTextField2.setVisible(true);
-        jTextField3.setVisible(true);
-        jTextField4.setVisible(true);
-        jTextField5.setVisible(true);
-        jTextField6.setVisible(true);
+    private void ataqueGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataqueGuerreiroActionPerformed
 
-        Mago mago;
-        Guerreiro guerreiro;
+        labelDanoGuerreiro.setVisible(false);
+        
+        labelDanoGuerreiro.setVisible(false);
+        
+        Guerreiro guerreiro = imprimeGuerreiros();
+        Mago mago = imprimeMago();
+        
+        ataqueGuerreiro(guerreiro, mago);
+        
+        ataqueGuerreiro.setVisible(false);
+        ataqueMago.setVisible(true);
 
-        guerreiro = imprimeGuerreiros();
-        mago = imprimeMago();
+    }//GEN-LAST:event_ataqueGuerreiroActionPerformed
 
-        batalha(mago, guerreiro);
+    private void ataqueMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataqueMagoActionPerformed
 
-        jButton1.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+
+        labelDanoGuerreiro.setVisible(false);
+        
+        labelDanoGuerreiro.setVisible(false);
+        
+        Guerreiro guerreiro = imprimeGuerreiros();
+        Mago mago = imprimeMago();
+        
+        ataqueMago(guerreiro, mago);
+        ataqueGuerreiro.setVisible(true);
+        ataqueMago.setVisible(false);
+    }//GEN-LAST:event_ataqueMagoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -385,7 +412,43 @@ public class TelaBatalha extends javax.swing.JFrame {
         return mago;
     }
 
-    private void batalha(Mago mago, Guerreiro guerreiro) { // Recebe 2 personagens um guerreiro e um mago
+    private void ataqueGuerreiro(Guerreiro guerreiro, Mago mago) {
+        double vidaMago = mago.getPontosVida();
+        double defesaMago = mago.getPontosDefesa();
+        double ataqueGuerreiro = guerreiro.getPontosAtaque();
+        
+        Random random = new Random();
+        double multiplicadorDano = (random.nextInt(20) + 1) * 0.5;
+        
+        double dano = Math.max((ataqueGuerreiro - defesaMago) * multiplicadorDano, 0);
+        vidaMago = Math.max(vidaMago - dano, 0);
+        String stringVidaMago = "" + vidaMago;
+        jLabel3.setText(stringVidaMago);
+
+        labelDanoMago.setText("-" + dano);
+        labelDanoMago.setVisible(true);
+        mago.setPontosVida(vidaMago);
+    }
+    private void ataqueMago(Guerreiro guerreiro, Mago mago){
+        double ataqueMago = mago.getPontosAtaque();
+        double vidaGuerreiro = guerreiro.getPontosVida();
+        double defesaGuerreiro = guerreiro.getPontosDefesa();
+        
+        Random random = new Random();
+        double multiplicadorDano = (random.nextInt(20) + 1) * 0.5;
+        
+         double dano = Math.max((ataqueMago - defesaGuerreiro) * multiplicadorDano, 0);
+            vidaGuerreiro = Math.max(vidaGuerreiro - dano, 0);
+            String stringVidaGuerreiro = "" + vidaGuerreiro;
+            jTextField1.setText(stringVidaGuerreiro);
+
+            labelDanoGuerreiro.setText("-" + dano);
+            labelDanoGuerreiro.setVisible(true);
+
+            guerreiro.setPontosVida(vidaGuerreiro);
+    }
+
+    private void batalha(Mago mago, Guerreiro guerreiro, int vezJogador) { // Recebe 2 personagens um guerreiro e um mago
         // Pegando atributos dos personagens
         double vidaMago = mago.getPontosVida();
         double ataqueMago = mago.getPontosAtaque();
@@ -393,51 +456,41 @@ public class TelaBatalha extends javax.swing.JFrame {
         double vidaGuerreiro = guerreiro.getPontosVida();
         double ataqueGuerreiro = guerreiro.getPontosAtaque();
         double defesaGuerreiro = guerreiro.getPontosDefesa();
-        double vezJogador;
 
-        // Use a classe Random para decidir aleatoriamente quem ataca primeiro
         Random random = new Random();
-        vezJogador = random.nextInt(2) + 1;  // Gera 1 ou 2 aleatoriamente
+        // Use a classe Random para decidir aleatoriamente quem ataca primeiro
         double multiplicadorDano = (random.nextInt(20) + 1) * 0.5;
-        System.out.println(vezJogador);
-        while (vidaMago > 0 && vidaGuerreiro > 0) { // A batalha dura até a vida de um dos personagens chegar a 0
-            labelDanoGuerreiro.setVisible(false);
-            labelDanoMago.setVisible(false);
-            if (vezJogador == 1) { // Vez do guerreiro
-                double dano = Math.max((ataqueGuerreiro - defesaMago) * multiplicadorDano, 0);
-                vidaMago = Math.max(vidaMago - dano, 0);
-                String stringVidaMago = "" + vidaMago;
-                jTextField3.setText(stringVidaMago);
-                vezJogador = 2;
-                labelDanoMago.setText("-"+dano);
-                labelDanoMago.setVisible(true);
-                timer(500);
-                
 
-            } else if (vezJogador == 2) { // Vez do mago
-                double dano = Math.max((ataqueMago - defesaGuerreiro) * multiplicadorDano, 0);
-                vidaGuerreiro = Math.max(vidaGuerreiro - dano, 0);
-                String stringVidaGuerreiro = "" + vidaGuerreiro;
-                jTextField1.setText(stringVidaGuerreiro);
-                vezJogador = 1;
-                
-                labelDanoGuerreiro.setText("-"+dano);
-                labelDanoGuerreiro.setVisible(true);
-                timer(500);
+        labelDanoGuerreiro.setVisible(false);
+        labelDanoMago.setVisible(false);
+        if (vezJogador == 1) { // Vez do guerreiro
 
-            }
+        } else if (vezJogador == 2) { // Vez do mago
+            double dano = Math.max((ataqueMago - defesaGuerreiro) * multiplicadorDano, 0);
+            vidaGuerreiro = Math.max(vidaGuerreiro - dano, 0);
+            String stringVidaGuerreiro = "" + vidaGuerreiro;
+            jTextField1.setText(stringVidaGuerreiro);
+            vezJogador = 1;
+
+            labelDanoGuerreiro.setText("-" + dano);
+            labelDanoGuerreiro.setVisible(true);
+
+            guerreiro.setPontosVida(vidaGuerreiro);
 
         }
     }
-    private void timer(long time){
-         try {
-                    Thread.sleep(time);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(TelaBatalha.class.getName()).log(Level.SEVERE, null, ex);
-                }
+
+    private void timer(long time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TelaBatalha.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton ataqueGuerreiro;
+    private javax.swing.JButton ataqueMago;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
