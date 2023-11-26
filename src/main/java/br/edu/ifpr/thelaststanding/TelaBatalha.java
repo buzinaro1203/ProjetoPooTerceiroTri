@@ -24,14 +24,26 @@ public class TelaBatalha extends javax.swing.JFrame {
      * Creates new form TelaBatalha
      */
     public TelaBatalha() {
-        Mago mago;
-        Guerreiro guerreiro;
-
         initComponents();
-        guerreiro = imprimeGuerreiros();
-        mago = imprimeMago();
         
-        batalha(mago,guerreiro);
+        jLabel2.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jLabel6.setVisible(false);
+        jLabel7.setVisible(false);
+        jLabel8.setVisible(false);
+        jLabel9.setVisible(false);
+        jLabel10.setVisible(false);
+        jLabel11.setVisible(false);
+        jTextField1.setVisible(false);
+        jTextField2.setVisible(false);
+        jTextField3.setVisible(false);
+        jTextField4.setVisible(false);
+        jTextField5.setVisible(false);
+        jTextField6.setVisible(false);
+        
+        
 
     }
 
@@ -47,6 +59,7 @@ public class TelaBatalha extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jTextField6 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -91,6 +104,15 @@ public class TelaBatalha extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField5);
         jTextField5.setBounds(840, 760, 140, 30);
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(620, 650, 100, 30);
 
         jTextField6.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jTextField6.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -215,6 +237,38 @@ public class TelaBatalha extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+                jLabel1.setVisible(true);
+        jLabel2.setVisible(true);
+        jLabel3.setVisible(true);
+        jLabel4.setVisible(true);
+        jLabel5.setVisible(true);
+        jLabel6.setVisible(true);
+        jLabel7.setVisible(true);
+        jLabel8.setVisible(true);
+        jLabel9.setVisible(true);
+        jLabel10.setVisible(true);
+        jLabel11.setVisible(true);
+        jTextField1.setVisible(true);
+        jTextField2.setVisible(true);
+        jTextField3.setVisible(true);
+        jTextField4.setVisible(true);
+        jTextField5.setVisible(true);
+        jTextField6.setVisible(true);
+        
+        Mago mago;
+        Guerreiro guerreiro;
+
+        
+        guerreiro = imprimeGuerreiros();
+        mago = imprimeMago();
+        
+        batalha(mago,guerreiro);
+        
+        jButton1.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -322,7 +376,8 @@ public class TelaBatalha extends javax.swing.JFrame {
             return mago;
         }
 
-    private void batalha(Mago mago, Guerreiro guerreiro) {
+    private void batalha(Mago mago, Guerreiro guerreiro) { // Recebe 2 personagens um guerreiro e um mago
+        // Pegando atributos dos personagens
         int vidaMago = mago.getPontosVida();
         int ataqueMago = mago.getPontosAtaque();
         int defesaMago = mago.getPontosDefesa();
@@ -335,24 +390,26 @@ public class TelaBatalha extends javax.swing.JFrame {
         Random random = new Random();
         vezJogador = random.nextInt(2)+1;  // Gera 1 ou 2 aleatoriamente
         System.out.println(vezJogador);
-        while (vidaMago > 0 && vidaGuerreiro > 0) {
-            if (vezJogador == 1) {
+        while (vidaMago > 0 && vidaGuerreiro > 0) { // A batalha dura até a vida de um dos personagens chegar a 0
+            if (vezJogador == 1) { // Vez do guerreiro
                 int dano = Math.max(ataqueGuerreiro - defesaMago, 0);
                 vidaMago = Math.max(vidaMago - dano, 0);
                 String stringVidaMago = "" + vidaMago;
                 jTextField3.setText(stringVidaMago);
                 vezJogador = 2;
 
-            } else if (vezJogador == 2) {
+            } else if (vezJogador == 2) { // Vez do mago
                 int dano = Math.max(ataqueMago - defesaGuerreiro, 0);
                 vidaGuerreiro = Math.max(vidaGuerreiro - dano, 0);
                 String stringVidaGuerreiro = "" + vidaGuerreiro;
                 jTextField1.setText(stringVidaGuerreiro);
                 vezJogador = 1;
             }
+            
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
