@@ -44,23 +44,18 @@ public class TelaBatalha extends javax.swing.JFrame {
         jTextField4.setVisible(true);
         jTextField5.setVisible(true);
         jTextField6.setVisible(true);
-        
+
         Random random = new Random();
         int vezJogador = random.nextInt(2) + 1;  // Gera 1 ou 2 aleatoriamente
-        
-        Mago mago = imprimeMago();
-        
-        Guerreiro guerreiro = imprimeGuerreiros();
-        
-            if(vezJogador == 1){
-                ataqueGuerreiro.setVisible(true);
-                ataqueMago.setVisible(false);
-            }else if(vezJogador == 2){
-                ataqueGuerreiro.setVisible(false);
-                ataqueMago.setVisible(true);
-            }
-        
-        
+
+        if (vezJogador == 1) {
+            ataqueGuerreiro.setVisible(true);
+            ataqueMago.setVisible(false);
+        } else if (vezJogador == 2) {
+            ataqueGuerreiro.setVisible(false);
+            ataqueMago.setVisible(true);
+        }
+
 
     }
 
@@ -278,35 +273,52 @@ public class TelaBatalha extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
+    int i = 0;
+    Guerreiro guerreiro;
+    Mago mago;
     private void ataqueGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataqueGuerreiroActionPerformed
 
         labelDanoGuerreiro.setVisible(false);
-        
-        labelDanoGuerreiro.setVisible(false);
-        
-        Guerreiro guerreiro = imprimeGuerreiros();
-        Mago mago = imprimeMago();
-        
-        ataqueGuerreiro(guerreiro, mago);
-        
+
+        labelDanoMago.setVisible(false);
+
+
+
+        if (i == 0) {
+            mago = imprimeMago();
+            guerreiro = imprimeGuerreiros();
+            i++;
+            j++;
+        }
+
+        mago = ataqueGuerreiro(guerreiro, mago);
+
+
         ataqueGuerreiro.setVisible(false);
         ataqueMago.setVisible(true);
 
     }//GEN-LAST:event_ataqueGuerreiroActionPerformed
-
+    int j = 0;
     private void ataqueMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataqueMagoActionPerformed
 
 
         labelDanoGuerreiro.setVisible(false);
-        
-        labelDanoGuerreiro.setVisible(false);
-        
-        Guerreiro guerreiro = imprimeGuerreiros();
-        Mago mago = imprimeMago();
-        
-        ataqueMago(guerreiro, mago);
+
+        labelDanoMago.setVisible(false);
+
+
+
+        if (j == 0) {
+            mago = imprimeMago();
+            guerreiro = imprimeGuerreiros();
+            j ++;
+            i++;
+        }
+
+        guerreiro = ataqueMago(guerreiro, mago);
         ataqueGuerreiro.setVisible(true);
         ataqueMago.setVisible(false);
+
     }//GEN-LAST:event_ataqueMagoActionPerformed
 
     /**
@@ -412,40 +424,46 @@ public class TelaBatalha extends javax.swing.JFrame {
         return mago;
     }
 
-    private void ataqueGuerreiro(Guerreiro guerreiro, Mago mago) {
+    private Mago ataqueGuerreiro(Guerreiro guerreiro, Mago mago) {
         double vidaMago = mago.getPontosVida();
         double defesaMago = mago.getPontosDefesa();
         double ataqueGuerreiro = guerreiro.getPontosAtaque();
-        
+
         Random random = new Random();
         double multiplicadorDano = (random.nextInt(20) + 1) * 0.5;
-        
+
         double dano = Math.max((ataqueGuerreiro - defesaMago) * multiplicadorDano, 0);
         vidaMago = Math.max(vidaMago - dano, 0);
+        mago.setPontosVida(vidaMago);
+
         String stringVidaMago = "" + vidaMago;
-        jLabel3.setText(stringVidaMago);
+        jTextField3.setText(stringVidaMago);
 
         labelDanoMago.setText("-" + dano);
         labelDanoMago.setVisible(true);
-        mago.setPontosVida(vidaMago);
+
+        return mago;
     }
-    private void ataqueMago(Guerreiro guerreiro, Mago mago){
+
+    private Guerreiro ataqueMago(Guerreiro guerreiro, Mago mago) {
         double ataqueMago = mago.getPontosAtaque();
         double vidaGuerreiro = guerreiro.getPontosVida();
         double defesaGuerreiro = guerreiro.getPontosDefesa();
-        
+
         Random random = new Random();
         double multiplicadorDano = (random.nextInt(20) + 1) * 0.5;
-        
-         double dano = Math.max((ataqueMago - defesaGuerreiro) * multiplicadorDano, 0);
-            vidaGuerreiro = Math.max(vidaGuerreiro - dano, 0);
-            String stringVidaGuerreiro = "" + vidaGuerreiro;
-            jTextField1.setText(stringVidaGuerreiro);
 
-            labelDanoGuerreiro.setText("-" + dano);
-            labelDanoGuerreiro.setVisible(true);
+        double dano = Math.max((ataqueMago - defesaGuerreiro) * multiplicadorDano, 0);
+        vidaGuerreiro = Math.max(vidaGuerreiro - dano, 0);
+        guerreiro.setPontosVida(vidaGuerreiro);
 
-            guerreiro.setPontosVida(vidaGuerreiro);
+        String stringVidaGuerreiro = "" + vidaGuerreiro;
+        jTextField1.setText(stringVidaGuerreiro);
+
+        labelDanoGuerreiro.setText("-" + dano);
+        labelDanoGuerreiro.setVisible(true);
+
+        return guerreiro;
     }
 
     private void batalha(Mago mago, Guerreiro guerreiro, int vezJogador) { // Recebe 2 personagens um guerreiro e um mago

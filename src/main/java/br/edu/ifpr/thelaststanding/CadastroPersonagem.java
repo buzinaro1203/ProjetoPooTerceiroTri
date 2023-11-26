@@ -26,10 +26,10 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         int ataque = (int) (Math.random() * (20 - 15 + 1) + 15);
         txtPontosAtaque.setText("" + ataque);
 
-        int defesa = (int) (Math.random() * (15 - 10 + 1) + 10);
+        int defesa = (int) (Math.random() * (20 - 10 + 1) + 15);
         txtPontosDefesa.setText("" + defesa);
 
-        int ataque1 = (int) (Math.random() * (25 - 20 + 1) + 15);
+        int ataque1 = (int) (Math.random() * (30 - 20 + 1) + 15);
         txtPontosAtaque1.setText("" + ataque1);
 
         int defesa1 = (int) (Math.random() * (10 - 5 + 1) + 10);
