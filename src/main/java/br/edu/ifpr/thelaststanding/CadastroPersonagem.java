@@ -95,35 +95,35 @@ public class CadastroPersonagem extends javax.swing.JFrame {
 
         guerreiroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         guerreiroLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Guerreiro.png"))); // NOI18N
-        guerreiroLabel.setText("Foto do Gueirreiro");
+        guerreiroLabel.setText("");
         guerreiroLabel.setAlignmentY(0.0F);
         getContentPane().add(guerreiroLabel);
         guerreiroLabel.setBounds(360, 320, 310, 300);
 
         guerreiroCrucifixoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/GuerreiroCruzpng.png"))); // NOI18N
-        guerreiroCrucifixoLabel.setText("jLabel1");
+        guerreiroCrucifixoLabel.setText("");
         getContentPane().add(guerreiroCrucifixoLabel);
         guerreiroCrucifixoLabel.setBounds(360, 320, 341, 300);
 
         guerreiroEspadaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/GuerreiroEspada.png"))); // NOI18N
-        guerreiroEspadaLabel.setText("jLabel9");
+        guerreiroEspadaLabel.setText("");
         getContentPane().add(guerreiroEspadaLabel);
         guerreiroEspadaLabel.setBounds(360, 310, 290, 310);
 
         magoCajadoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoGelo.png"))); // NOI18N
-        magoCajadoLabel.setText("jLabel1");
+        magoCajadoLabel.setText("");
         getContentPane().add(magoCajadoLabel);
         magoCajadoLabel.setBounds(630, 320, 341, 300);
 
         magoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         magoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoNormal.png"))); // NOI18N
-        magoLabel.setText("Foto do Mistico");
+        magoLabel.setText("");
         magoLabel.setAlignmentY(0.0F);
         getContentPane().add(magoLabel);
         magoLabel.setBounds(690, 320, 249, 300);
 
         magoSombraLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoMal.png"))); // NOI18N
-        magoSombraLabel.setText("jLabel1");
+        magoSombraLabel.setText("");
         getContentPane().add(magoSombraLabel);
         magoSombraLabel.setBounds(630, 320, 341, 300);
 

@@ -4,6 +4,14 @@
  */
 package br.edu.ifpr.thelaststanding;
 
+import br.edu.ifpr.thelaststanding.conexao.Conexao;
+import br.edu.ifpr.thelaststanding.personagens.Mago;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Buzinaro
@@ -15,6 +23,9 @@ public class TelaVencedores extends javax.swing.JFrame {
      */
     public TelaVencedores() {
         initComponents();
+        
+        jLabel2.setText(imprimeVencedor());
+        
     }
 
     /**
@@ -26,6 +37,8 @@ public class TelaVencedores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -34,6 +47,19 @@ public class TelaVencedores extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1280, 960));
         setResizable(false);
         getContentPane().setLayout(null);
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Ultimo Vencedor");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(460, 330, 370, 60);
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(470, 470, 350, 80);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/TelaVencedor.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -77,8 +103,31 @@ public class TelaVencedores extends javax.swing.JFrame {
             }
         });
     }
+    private String imprimeVencedor() {
+
+
+        String sql = "SELECT * FROM `tb_batalha` ORDER BY id_batalha DESC LIMIT 1;";
+        String nomeVencedor = null;
+
+        try {
+            PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
+            ResultSet resultado = preparacaoDaInstrucao.executeQuery();
+
+            while (resultado.next()) {
+                nomeVencedor = (resultado.getString("nome_vencedor"));
+            
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(VerGuerreiro.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+
+        }
+        return nomeVencedor;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

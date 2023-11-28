@@ -15,6 +15,7 @@ import java.sql.Time;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  * @author Aluno
@@ -47,6 +48,15 @@ public class TelaBatalha extends javax.swing.JFrame {
         jTextField5.setVisible(true);
         jTextField6.setVisible(true);
         returnButton.setVisible(false);
+        jLabel3.setVisible(true);
+        magoDeGelo.setVisible(false);
+        magoTrevoso.setVisible(false);
+        GuerreiroEspadaFlamejante.setVisible(false);
+        jLabel2.setVisible(true);
+        guerreiroCruz.setVisible(false);
+
+        //getMagoImage();
+        //getGuerreiroImage();
 
         Random random = new Random();
         int vezJogador = random.nextInt(2) + 1;  // Gera 1 ou 2 aleatoriamente
@@ -71,6 +81,10 @@ public class TelaBatalha extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel11 = new javax.swing.JLabel();
+        GuerreiroEspadaFlamejante = new javax.swing.JLabel();
+        guerreiroCruz = new javax.swing.JLabel();
+        magoDeGelo = new javax.swing.JLabel();
+        magoTrevoso = new javax.swing.JLabel();
         labelDanoMago = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
@@ -101,6 +115,22 @@ public class TelaBatalha extends javax.swing.JFrame {
         getContentPane().setLayout(null);
         getContentPane().add(jLabel11);
         jLabel11.setBounds(870, 330, 130, 30);
+
+        GuerreiroEspadaFlamejante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/GuerreiroEspada.png"))); // NOI18N
+        getContentPane().add(GuerreiroEspadaFlamejante);
+        GuerreiroEspadaFlamejante.setBounds(280, 340, 290, 340);
+
+        guerreiroCruz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/GuerreiroCruzpng.png"))); // NOI18N
+        getContentPane().add(guerreiroCruz);
+        guerreiroCruz.setBounds(290, 350, 300, 300);
+
+        magoDeGelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoGelo.png"))); // NOI18N
+        getContentPane().add(magoDeGelo);
+        magoDeGelo.setBounds(750, 300, 290, 420);
+
+        magoTrevoso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoMal.png"))); // NOI18N
+        getContentPane().add(magoTrevoso);
+        magoTrevoso.setBounds(750, 300, 290, 420);
 
         labelDanoMago.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         labelDanoMago.setForeground(new java.awt.Color(255, 0, 0));
@@ -288,7 +318,64 @@ public class TelaBatalha extends javax.swing.JFrame {
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
+    /*private void getGuerreiroImage() {
+        CadastroPersonagem cp = new CadastroPersonagem();
+        String tipoGuerreiro = cp.getGuerreiroImage();
+        System.out.println(tipoGuerreiro);
 
+        if (tipoGuerreiro == "Espada Flamejante") {
+
+            jLabel2.setVisible(false);
+            guerreiroCruz.setVisible(false);
+            GuerreiroEspadaFlamejante.setVisible(true);
+        }
+
+        if (tipoGuerreiro == "<Vazio>") {
+
+            jLabel2.setVisible(true);
+            guerreiroCruz.setVisible(false);
+            GuerreiroEspadaFlamejante.setVisible(false);
+
+        }
+
+        if (tipoGuerreiro == "Crucifixo") {
+
+            GuerreiroEspadaFlamejante.setVisible(false);
+            jLabel2.setVisible(false);
+            guerreiroCruz.setVisible(true);
+
+        }
+    }
+
+    private void getMagoImage() {
+
+        CadastroPersonagem cp = new CadastroPersonagem();
+
+        String tipoMago = cp.getMagoImage();
+        if (tipoMago == "<Vazio>") {
+
+            jLabel3.setVisible(false);
+            magoTrevoso.setVisible(false);
+            magoDeGelo.setVisible(true);
+        }
+
+        if (tipoMago == "Cajado De Gelo") {
+
+            magoTrevoso.setVisible(false);
+            jLabel3.setVisible(false);
+            magoDeGelo.setVisible(true);
+
+        }
+
+        if (tipoMago == "Grimorio das Sombras") {
+
+            jLabel3.setVisible(false);
+            magoDeGelo.setVisible(false);
+            magoTrevoso.setVisible(true);
+
+        }
+    }
+*/
     int i = 0;
     Guerreiro guerreiro;
     Mago mago;
@@ -463,7 +550,9 @@ public class TelaBatalha extends javax.swing.JFrame {
 
             labelVitoria.setText(mago.getNome() + " Venceu!!");
             labelVitoria.setVisible(true);
-             returnButton.setVisible(true);
+            returnButton.setVisible(true);
+
+            salvar(guerreiro);
         } else {
             ataqueMagoBtn.setVisible(true);
             ataqueGuerreiroBtn.setVisible(false);
@@ -500,10 +589,12 @@ public class TelaBatalha extends javax.swing.JFrame {
             labelVitoria.setVisible(true);
             labelDanoGuerreiro.setVisible(false);
             returnButton.setVisible(true);
+
+            salvar(mago);
         } else {
             ataqueMagoBtn.setVisible(false);
             ataqueGuerreiroBtn.setVisible(true);
-           
+
         }
 
         return guerreiro;
@@ -541,17 +632,41 @@ public class TelaBatalha extends javax.swing.JFrame {
         }
     }
 
-    private void timer(long time) {
+    private void salvar(Mago mago) {
+        String sql = "INSERT INTO `tb_batalha`(`nome_vencedor`)"
+                + "VALUES "
+                + "(?);";
         try {
-            Thread.sleep(time);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(TelaBatalha.class.getName()).log(Level.SEVERE, null, ex);
+            PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
+            preparacaoDaInstrucao.setString(1, mago.getNome());
+            preparacaoDaInstrucao.executeUpdate();
+
+            // libera a memória da janela
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void salvar(Guerreiro guerreiro) {
+        String sql = "INSERT INTO `tb_batalha`(`nome_vencedor`)"
+                + "VALUES "
+                + "(?);";
+        try {
+            PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
+            preparacaoDaInstrucao.setString(1, guerreiro.getNome());
+            preparacaoDaInstrucao.executeUpdate();
+
+            // libera a memória da janela
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel GuerreiroEspadaFlamejante;
     private javax.swing.JButton ataqueGuerreiroBtn;
     private javax.swing.JButton ataqueMagoBtn;
+    private javax.swing.JLabel guerreiroCruz;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -572,6 +687,8 @@ public class TelaBatalha extends javax.swing.JFrame {
     private javax.swing.JLabel labelDanoGuerreiro;
     private javax.swing.JLabel labelDanoMago;
     private javax.swing.JLabel labelVitoria;
+    private javax.swing.JLabel magoDeGelo;
+    private javax.swing.JLabel magoTrevoso;
     private javax.swing.JButton returnButton;
     // End of variables declaration//GEN-END:variables
 }
