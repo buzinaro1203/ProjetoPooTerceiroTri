@@ -36,6 +36,8 @@ public class TelaBatalha extends javax.swing.JFrame {
         jLabel7.setVisible(true);
         jLabel8.setVisible(true);
         jLabel9.setVisible(true);
+        labelVitoria.setVisible(false);
+
         jLabel10.setVisible(true);
         jLabel11.setVisible(true);
         jTextField1.setVisible(true);
@@ -44,18 +46,18 @@ public class TelaBatalha extends javax.swing.JFrame {
         jTextField4.setVisible(true);
         jTextField5.setVisible(true);
         jTextField6.setVisible(true);
+        returnButton.setVisible(false);
 
         Random random = new Random();
         int vezJogador = random.nextInt(2) + 1;  // Gera 1 ou 2 aleatoriamente
 
         if (vezJogador == 1) {
-            ataqueGuerreiro.setVisible(true);
-            ataqueMago.setVisible(false);
+            ataqueGuerreiroBtn.setVisible(true);
+            ataqueMagoBtn.setVisible(false);
         } else if (vezJogador == 2) {
-            ataqueGuerreiro.setVisible(false);
-            ataqueMago.setVisible(true);
+            ataqueGuerreiroBtn.setVisible(false);
+            ataqueMagoBtn.setVisible(true);
         }
-
 
     }
 
@@ -72,9 +74,10 @@ public class TelaBatalha extends javax.swing.JFrame {
         labelDanoMago = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        ataqueGuerreiro = new javax.swing.JButton();
+        labelVitoria = new javax.swing.JLabel();
+        ataqueGuerreiroBtn = new javax.swing.JButton();
         labelDanoGuerreiro = new javax.swing.JLabel();
-        ataqueMago = new javax.swing.JButton();
+        ataqueMagoBtn = new javax.swing.JButton();
         jTextField6 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -86,6 +89,7 @@ public class TelaBatalha extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        returnButton = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -100,7 +104,7 @@ public class TelaBatalha extends javax.swing.JFrame {
 
         labelDanoMago.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         labelDanoMago.setForeground(new java.awt.Color(255, 0, 0));
-        labelDanoMago.setText("asdasds");
+        labelDanoMago.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(labelDanoMago);
         labelDanoMago.setBounds(830, 290, 90, 50);
 
@@ -125,30 +129,32 @@ public class TelaBatalha extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField5);
         jTextField5.setBounds(840, 760, 140, 30);
+        getContentPane().add(labelVitoria);
+        labelVitoria.setBounds(520, 240, 270, 100);
 
-        ataqueGuerreiro.setText("Ataque");
-        ataqueGuerreiro.addActionListener(new java.awt.event.ActionListener() {
+        ataqueGuerreiroBtn.setText("Ataque");
+        ataqueGuerreiroBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ataqueGuerreiroActionPerformed(evt);
+                ataqueGuerreiroBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(ataqueGuerreiro);
-        ataqueGuerreiro.setBounds(390, 660, 70, 40);
+        getContentPane().add(ataqueGuerreiroBtn);
+        ataqueGuerreiroBtn.setBounds(390, 660, 70, 40);
 
         labelDanoGuerreiro.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         labelDanoGuerreiro.setForeground(new java.awt.Color(255, 0, 0));
-        labelDanoGuerreiro.setText("asdasds");
+        labelDanoGuerreiro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(labelDanoGuerreiro);
         labelDanoGuerreiro.setBounds(460, 280, 90, 50);
 
-        ataqueMago.setText("Ataque");
-        ataqueMago.addActionListener(new java.awt.event.ActionListener() {
+        ataqueMagoBtn.setText("Ataque");
+        ataqueMagoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ataqueMagoActionPerformed(evt);
+                ataqueMagoBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(ataqueMago);
-        ataqueMago.setBounds(880, 660, 70, 40);
+        getContentPane().add(ataqueMagoBtn);
+        ataqueMagoBtn.setBounds(880, 660, 70, 40);
 
         jTextField6.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jTextField6.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -220,6 +226,15 @@ public class TelaBatalha extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(290, 810, 50, 16);
 
+        returnButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/CCghb2jmusREZesANOmAbsgIBN7nI9VZPDfnxPHhHxjaDuuU5QkBzzBxN9mSHWkp8x2MNHo9eTnaK9dM1AhqBY2rV1RM3IQSO9s1ytEbEKT6sdOAwP8HblzPDyaVCfsAAAAASUVORK5CYII.png"))); // NOI18N
+        returnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(returnButton);
+        returnButton.setBounds(590, 820, 160, 80);
+
         jTextField4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jTextField4.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextField4.setEnabled(false);
@@ -245,6 +260,7 @@ public class TelaBatalha extends javax.swing.JFrame {
         jLabel1.setBounds(10, 0, 1270, 960);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,13 +292,11 @@ public class TelaBatalha extends javax.swing.JFrame {
     int i = 0;
     Guerreiro guerreiro;
     Mago mago;
-    private void ataqueGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataqueGuerreiroActionPerformed
+    private void ataqueGuerreiroBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataqueGuerreiroBtnActionPerformed
 
         labelDanoGuerreiro.setVisible(false);
 
         labelDanoMago.setVisible(false);
-
-
 
         if (i == 0) {
             mago = imprimeMago();
@@ -294,32 +308,33 @@ public class TelaBatalha extends javax.swing.JFrame {
         mago = ataqueGuerreiro(guerreiro, mago);
 
 
-        ataqueGuerreiro.setVisible(false);
-        ataqueMago.setVisible(true);
-
-    }//GEN-LAST:event_ataqueGuerreiroActionPerformed
+    }//GEN-LAST:event_ataqueGuerreiroBtnActionPerformed
     int j = 0;
-    private void ataqueMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataqueMagoActionPerformed
-
+    private void ataqueMagoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ataqueMagoBtnActionPerformed
 
         labelDanoGuerreiro.setVisible(false);
 
         labelDanoMago.setVisible(false);
 
-
-
         if (j == 0) {
             mago = imprimeMago();
             guerreiro = imprimeGuerreiros();
-            j ++;
+            j++;
             i++;
         }
 
         guerreiro = ataqueMago(guerreiro, mago);
-        ataqueGuerreiro.setVisible(true);
-        ataqueMago.setVisible(false);
 
-    }//GEN-LAST:event_ataqueMagoActionPerformed
+
+    }//GEN-LAST:event_ataqueMagoBtnActionPerformed
+
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
+        // TODO add your handling code here:
+        TelaAbertura tela = new TelaAbertura();
+        this.dispose();
+        tela.setVisible(true);
+
+    }//GEN-LAST:event_returnButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -442,6 +457,20 @@ public class TelaBatalha extends javax.swing.JFrame {
         labelDanoMago.setText("-" + dano);
         labelDanoMago.setVisible(true);
 
+        if (vidaMago == 0) {
+            ataqueMagoBtn.setVisible(false);
+            ataqueGuerreiroBtn.setVisible(false);
+
+            labelVitoria.setText(mago.getNome() + " Venceu!!");
+            labelVitoria.setVisible(true);
+             returnButton.setVisible(true);
+        } else {
+            ataqueMagoBtn.setVisible(true);
+            ataqueGuerreiroBtn.setVisible(false);
+            labelDanoGuerreiro.setVisible(false);
+
+        }
+
         return mago;
     }
 
@@ -462,6 +491,20 @@ public class TelaBatalha extends javax.swing.JFrame {
 
         labelDanoGuerreiro.setText("-" + dano);
         labelDanoGuerreiro.setVisible(true);
+
+        if (vidaGuerreiro == 0) {
+            ataqueMagoBtn.setVisible(false);
+            ataqueGuerreiroBtn.setVisible(false);
+
+            labelVitoria.setText(mago.getNome() + " Venceu!!");
+            labelVitoria.setVisible(true);
+            labelDanoGuerreiro.setVisible(false);
+            returnButton.setVisible(true);
+        } else {
+            ataqueMagoBtn.setVisible(false);
+            ataqueGuerreiroBtn.setVisible(true);
+           
+        }
 
         return guerreiro;
     }
@@ -507,8 +550,8 @@ public class TelaBatalha extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ataqueGuerreiro;
-    private javax.swing.JButton ataqueMago;
+    private javax.swing.JButton ataqueGuerreiroBtn;
+    private javax.swing.JButton ataqueMagoBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -528,5 +571,7 @@ public class TelaBatalha extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JLabel labelDanoGuerreiro;
     private javax.swing.JLabel labelDanoMago;
+    private javax.swing.JLabel labelVitoria;
+    private javax.swing.JButton returnButton;
     // End of variables declaration//GEN-END:variables
 }
