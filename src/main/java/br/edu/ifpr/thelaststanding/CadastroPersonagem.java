@@ -37,7 +37,13 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         
         jButton3.setVisible(false);
 
+        guerreiroEspadaLabel.setVisible(false);
+        
+        guerreiroCrucifixoLabel.setVisible(false);
+        
+        magoCajadoLabel.setVisible(false);
 
+        magoSombraLabel.setVisible(false);
     }
 
     /**
@@ -49,7 +55,12 @@ public class CadastroPersonagem extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        guerreiroLabel = new javax.swing.JLabel();
+        guerreiroCrucifixoLabel = new javax.swing.JLabel();
+        guerreiroEspadaLabel = new javax.swing.JLabel();
+        magoCajadoLabel = new javax.swing.JLabel();
+        magoLabel = new javax.swing.JLabel();
+        magoSombraLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -60,7 +71,6 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         txtPontosDefesa = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         txtPontosDefesa1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtPontosAtaque1 = new javax.swing.JTextField();
@@ -69,10 +79,10 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         txtNome1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        magoComboBox = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        guerreiroComboBox = new javax.swing.JComboBox<>();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
@@ -83,12 +93,39 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 960));
         getContentPane().setLayout(null);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Guerreiro.png"))); // NOI18N
-        jLabel1.setText("Foto do Gueirreiro");
-        jLabel1.setAlignmentY(0.0F);
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(350, 310, 310, 300);
+        guerreiroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        guerreiroLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Guerreiro.png"))); // NOI18N
+        guerreiroLabel.setText("Foto do Gueirreiro");
+        guerreiroLabel.setAlignmentY(0.0F);
+        getContentPane().add(guerreiroLabel);
+        guerreiroLabel.setBounds(360, 320, 310, 300);
+
+        guerreiroCrucifixoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/GuerreiroCruzpng.png"))); // NOI18N
+        guerreiroCrucifixoLabel.setText("jLabel1");
+        getContentPane().add(guerreiroCrucifixoLabel);
+        guerreiroCrucifixoLabel.setBounds(360, 320, 341, 300);
+
+        guerreiroEspadaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/GuerreiroEspada.png"))); // NOI18N
+        guerreiroEspadaLabel.setText("jLabel9");
+        getContentPane().add(guerreiroEspadaLabel);
+        guerreiroEspadaLabel.setBounds(360, 310, 290, 310);
+
+        magoCajadoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoGelo.png"))); // NOI18N
+        magoCajadoLabel.setText("jLabel1");
+        getContentPane().add(magoCajadoLabel);
+        magoCajadoLabel.setBounds(630, 320, 341, 300);
+
+        magoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        magoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoNormal.png"))); // NOI18N
+        magoLabel.setText("Foto do Mistico");
+        magoLabel.setAlignmentY(0.0F);
+        getContentPane().add(magoLabel);
+        magoLabel.setBounds(690, 320, 249, 300);
+
+        magoSombraLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoMal.png"))); // NOI18N
+        magoSombraLabel.setText("jLabel1");
+        getContentPane().add(magoSombraLabel);
+        magoSombraLabel.setBounds(630, 320, 341, 300);
 
         jLabel2.setText("Nome");
         jLabel2.setAlignmentY(0.0F);
@@ -174,13 +211,6 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(900, 620, 130, 23);
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoNormal.png"))); // NOI18N
-        jLabel8.setText("Foto do Mistico");
-        jLabel8.setAlignmentY(0.0F);
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(670, 300, 249, 300);
-
         txtPontosDefesa1.setEditable(false);
         txtPontosDefesa1.setAlignmentX(0.0F);
         txtPontosDefesa1.setAlignmentY(0.0F);
@@ -245,16 +275,16 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         getContentPane().add(jLabel14);
         jLabel14.setBounds(930, 300, 60, 16);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Vazio>", "Cajado De Gelo", "Grimorio das Sombras" }));
-        jComboBox1.setAlignmentX(0.0F);
-        jComboBox1.setAlignmentY(0.0F);
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        magoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Vazio>", "Cajado De Gelo", "Grimorio das Sombras" }));
+        magoComboBox.setAlignmentX(0.0F);
+        magoComboBox.setAlignmentY(0.0F);
+        magoComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                magoComboBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(930, 530, 220, 22);
+        getContentPane().add(magoComboBox);
+        magoComboBox.setBounds(930, 530, 220, 22);
 
         jLabel15.setText("Pontos de Defesa");
         jLabel15.setAlignmentY(0.0F);
@@ -266,16 +296,16 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(930, 510, 40, 16);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Vazio>", "Espada Flamejante", "Crucifixo" }));
-        jComboBox2.setAlignmentX(0.0F);
-        jComboBox2.setAlignmentY(0.0F);
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        guerreiroComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Vazio>", "Espada Flamejante", "Crucifixo" }));
+        guerreiroComboBox.setAlignmentX(0.0F);
+        guerreiroComboBox.setAlignmentY(0.0F);
+        guerreiroComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                guerreiroComboBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(150, 530, 210, 22);
+        getContentPane().add(guerreiroComboBox);
+        guerreiroComboBox.setBounds(150, 530, 210, 22);
 
         jButton3.setBackground(new java.awt.Color(255, 255, 204));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/confirm-button.png"))); // NOI18N
@@ -348,6 +378,7 @@ public class CadastroPersonagem extends javax.swing.JFrame {
         if(jbutton1value == 1 && jbutton2value == 1){
             jButton3.setVisible(true);
         }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtPontosDefesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPontosDefesa1ActionPerformed
@@ -364,15 +395,68 @@ public class CadastroPersonagem extends javax.swing.JFrame {
 
     private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_txtNome1ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void magoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_magoComboBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        
+         String valorSelecionado = magoComboBox.getSelectedItem().toString();
+        
+        if(valorSelecionado == "<Vazio>"){
+             
+            magoCajadoLabel.setVisible(false);
+            magoSombraLabel.setVisible(false);
+            magoLabel.setVisible(true);
+        }
+        
+         if(valorSelecionado == "Cajado De Gelo"){
+            
+            magoSombraLabel.setVisible(false);
+            magoLabel.setVisible(false);
+            magoCajadoLabel.setVisible(true);
+            
+        }
+       
+         if(valorSelecionado == "Grimorio das Sombras"){
+            
+            magoLabel.setVisible(false);
+            magoCajadoLabel.setVisible(false);
+            magoSombraLabel.setVisible(true);
+            
+        }
+        
+    }//GEN-LAST:event_magoComboBoxActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    private void guerreiroComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guerreiroComboBoxActionPerformed
+        
+        String valorSelecionado = guerreiroComboBox.getSelectedItem().toString();
+        
+        if(valorSelecionado == "Espada Flamejante"){
+            
+            guerreiroLabel.setVisible(false);
+            guerreiroCrucifixoLabel.setVisible(false);
+            guerreiroEspadaLabel.setVisible(true);
+        }
+        
+         if(valorSelecionado == "<Vazio>"){
+            
+            guerreiroEspadaLabel.setVisible(false);
+            guerreiroCrucifixoLabel.setVisible(false);
+            guerreiroLabel.setVisible(true);
+            
+        }
+       
+         if(valorSelecionado == "Crucifixo"){
+            
+            guerreiroEspadaLabel.setVisible(false); 
+            guerreiroLabel.setVisible(false);
+            guerreiroCrucifixoLabel.setVisible(true);
+            
+        }
+         
+    }//GEN-LAST:event_guerreiroComboBoxActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -419,12 +503,13 @@ public class CadastroPersonagem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> guerreiroComboBox;
+    private javax.swing.JLabel guerreiroCrucifixoLabel;
+    private javax.swing.JLabel guerreiroEspadaLabel;
+    private javax.swing.JLabel guerreiroLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -436,7 +521,10 @@ public class CadastroPersonagem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel magoCajadoLabel;
+    private javax.swing.JComboBox<String> magoComboBox;
+    private javax.swing.JLabel magoLabel;
+    private javax.swing.JLabel magoSombraLabel;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNome1;
     private javax.swing.JTextField txtPontosAtaque;
