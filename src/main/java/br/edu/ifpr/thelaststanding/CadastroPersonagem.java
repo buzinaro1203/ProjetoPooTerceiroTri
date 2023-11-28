@@ -23,16 +23,16 @@ public class CadastroPersonagem extends javax.swing.JFrame {
     public CadastroPersonagem() {
         initComponents();
         // Gerar um inteiro entre min e max
-        int ataque = (int) (Math.random() * (20 - 15 + 1) + 15);
+        int ataque = (int) (Math.random() * (5 + 1) + 16);
         txtPontosAtaque.setText("" + ataque);
 
-        int defesa = (int) (Math.random() * (20 - 10 + 1) + 15);
+        int defesa = (int) (Math.random() * (15 - 10 + 1) + 5);
         txtPontosDefesa.setText("" + defesa);
 
-        int ataque1 = (int) (Math.random() * (30 - 20 + 1) + 15);
+        int ataque1 = (int) (Math.random() * (5 + 1) + 18);
         txtPontosAtaque1.setText("" + ataque1);
 
-        int defesa1 = (int) (Math.random() * (10 - 5 + 1) + 10);
+        int defesa1 = (int) (Math.random() * (10 - 5 + 1) + 3);
         txtPontosDefesa1.setText("" + defesa1);
         
         jButton3.setVisible(false);

@@ -80,12 +80,12 @@ public class TelaBatalha extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        labelDanoMago = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         GuerreiroEspadaFlamejante = new javax.swing.JLabel();
         guerreiroCruz = new javax.swing.JLabel();
         magoDeGelo = new javax.swing.JLabel();
         magoTrevoso = new javax.swing.JLabel();
-        labelDanoMago = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         labelVitoria = new javax.swing.JLabel();
@@ -113,8 +113,17 @@ public class TelaBatalha extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1280, 960));
         setResizable(false);
         getContentPane().setLayout(null);
+
+        labelDanoMago.setFont(new java.awt.Font("Minecraft", 0, 24)); // NOI18N
+        labelDanoMago.setForeground(new java.awt.Color(255, 0, 0));
+        labelDanoMago.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(labelDanoMago);
+        labelDanoMago.setBounds(740, 350, 90, 50);
+
+        jLabel11.setFont(new java.awt.Font("Minecraft", 1, 24)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(870, 330, 130, 30);
+        jLabel11.setBounds(800, 290, 270, 50);
 
         GuerreiroEspadaFlamejante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/GuerreiroEspada.png"))); // NOI18N
         getContentPane().add(GuerreiroEspadaFlamejante);
@@ -131,12 +140,6 @@ public class TelaBatalha extends javax.swing.JFrame {
         magoTrevoso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/MagoMal.png"))); // NOI18N
         getContentPane().add(magoTrevoso);
         magoTrevoso.setBounds(750, 300, 290, 420);
-
-        labelDanoMago.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        labelDanoMago.setForeground(new java.awt.Color(255, 0, 0));
-        labelDanoMago.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(labelDanoMago);
-        labelDanoMago.setBounds(830, 290, 90, 50);
 
         jTextField3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jTextField3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -159,8 +162,10 @@ public class TelaBatalha extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField5);
         jTextField5.setBounds(840, 760, 140, 30);
+
+        labelVitoria.setFont(new java.awt.Font("Minecraft", 0, 36)); // NOI18N
         getContentPane().add(labelVitoria);
-        labelVitoria.setBounds(520, 240, 270, 100);
+        labelVitoria.setBounds(440, 190, 490, 100);
 
         ataqueGuerreiroBtn.setText("Ataque");
         ataqueGuerreiroBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -171,11 +176,11 @@ public class TelaBatalha extends javax.swing.JFrame {
         getContentPane().add(ataqueGuerreiroBtn);
         ataqueGuerreiroBtn.setBounds(390, 660, 70, 40);
 
-        labelDanoGuerreiro.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        labelDanoGuerreiro.setFont(new java.awt.Font("Minecraft", 0, 24)); // NOI18N
         labelDanoGuerreiro.setForeground(new java.awt.Color(255, 0, 0));
         labelDanoGuerreiro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(labelDanoGuerreiro);
-        labelDanoGuerreiro.setBounds(460, 280, 90, 50);
+        labelDanoGuerreiro.setBounds(470, 330, 90, 50);
 
         ataqueMagoBtn.setText("Ataque");
         ataqueMagoBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -222,8 +227,11 @@ public class TelaBatalha extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1);
         jTextField1.setBounds(360, 720, 140, 30);
+
+        jLabel5.setFont(new java.awt.Font("Minecraft", 1, 24)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(360, 330, 140, 30);
+        jLabel5.setBounds(260, 290, 330, 70);
 
         jLabel4.setForeground(new java.awt.Color(250, 250, 250));
         jLabel4.setText("Vida");
@@ -532,7 +540,7 @@ public class TelaBatalha extends javax.swing.JFrame {
         double ataqueGuerreiro = guerreiro.getPontosAtaque();
 
         Random random = new Random();
-        double multiplicadorDano = (random.nextInt(20) + 1) * 0.5;
+        double multiplicadorDano = (random.nextInt(6) + 1) * 0.5;
 
         double dano = Math.max((ataqueGuerreiro - defesaMago) * multiplicadorDano, 0);
         vidaMago = Math.max(vidaMago - dano, 0);
@@ -548,7 +556,7 @@ public class TelaBatalha extends javax.swing.JFrame {
             ataqueMagoBtn.setVisible(false);
             ataqueGuerreiroBtn.setVisible(false);
 
-            labelVitoria.setText(mago.getNome() + " Venceu!!");
+            labelVitoria.setText(guerreiro.getNome() + " Venceu!!");
             labelVitoria.setVisible(true);
             returnButton.setVisible(true);
 
@@ -556,7 +564,6 @@ public class TelaBatalha extends javax.swing.JFrame {
         } else {
             ataqueMagoBtn.setVisible(true);
             ataqueGuerreiroBtn.setVisible(false);
-            labelDanoGuerreiro.setVisible(false);
 
         }
 
@@ -569,7 +576,7 @@ public class TelaBatalha extends javax.swing.JFrame {
         double defesaGuerreiro = guerreiro.getPontosDefesa();
 
         Random random = new Random();
-        double multiplicadorDano = (random.nextInt(20) + 1) * 0.5;
+        double multiplicadorDano = (random.nextInt(6) + 1) * 0.5;
 
         double dano = Math.max((ataqueMago - defesaGuerreiro) * multiplicadorDano, 0);
         vidaGuerreiro = Math.max(vidaGuerreiro - dano, 0);
@@ -611,7 +618,7 @@ public class TelaBatalha extends javax.swing.JFrame {
 
         Random random = new Random();
         // Use a classe Random para decidir aleatoriamente quem ataca primeiro
-        double multiplicadorDano = (random.nextInt(20) + 1) * 0.5;
+        double multiplicadorDano = (random.nextInt(6) + 1) * 0.5;
 
         labelDanoGuerreiro.setVisible(false);
         labelDanoMago.setVisible(false);
