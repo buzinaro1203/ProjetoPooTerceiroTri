@@ -31,5 +31,5 @@ Este é um projeto **acadêmico**, desenvolvido durante o ensino médio no curso
 Este jogo foi desenvolvido por:
 
 * **Guilherme Henrique Barbosa Buzinaro**
-* **Alan da Silva Assis**
-* **José Rodolfo de Brito**
+* **Alan Silva de Assis**
+* **José Rodolfo Brito**
